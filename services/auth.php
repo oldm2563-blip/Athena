@@ -19,8 +19,15 @@
             $_SESSION['email'] = $man['email'];
             $_SESSION['role'] = $man['role'];
             $_SESSION['id'] = $man['user_id'];
-            header("Location: dashboard.php");
-            exit();
+            if($man['role'] === "admin"){
+                header("Location: admin.php");
+                exit();
+            }
+            else{
+                header("Location: dashboard.php");
+                 exit();
+            }
+            
         }
         else{
             $error = "incorrect password";
