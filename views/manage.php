@@ -1,6 +1,6 @@
 <?php
     require __DIR__ . "/../services/session.php";
-    require __DIR__ . "/../services/amounts.php";
+    require __DIR__ . "/../services/require.php";
     require __DIR__ . "/../services/projects.php";
 ?>
 <!DOCTYPE html>
@@ -205,6 +205,12 @@ h1{
             <a class="logout" href="../services/logout.php">Logout</a>
         </div>
     </header>
+    <div class="ww">
+    <form method="GET" action="">
+        <input type="text" name="title" placeholder="Search project by title" value="<?= htmlspecialchars($_GET['title'] ?? '') ?>">
+        <button class="cr" type="submit">Search</button>
+    </form>
+</div>
     <div class="ww"><a class="cr" href="createpr.php">Create Project</a><a class="logout" href="dashboard.php">Back</a></div>
      <div class="project_container">
         <?php foreach($output as $out): ?>
